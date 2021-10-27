@@ -4,11 +4,11 @@ import 'dart:math';
 void main() {
   Welcome();
   DeckOfCards();
-  shuffledDeckOfCards();
-  List<int> Cards = DeckOfCards();
+  //shuffledDeckOfCards();
+  //List<int> Cards = DeckOfCards();
   //int namercard = int.parse(stdin.readLineSync());
   //cardNamer(namercard);
-  //List<int> Cards = shuffledDeckOfCards();
+  List<int> Cards = shuffledDeckOfCards();
   print(Cards);
 }
 
@@ -21,9 +21,8 @@ void Welcome(){
             GOOD LUCK S2!
   """);
 }
-
+List<int> theDeck = [];
 List<int> DeckOfCards(){
-  List<int> theDeck = [];
   for (int i = 1; i<= 13; i++){
     for (int j = 1; j <=4; j++){
       theDeck.add(i);
@@ -56,13 +55,10 @@ List<int> DeckOfCards(){
       print("King");
     }
   }
-  //print('TheDeck is: $theDeck');
-  //theDeck.shuffle();
-  //return theDeck;
 }
 List<int> shuffledDeckOfCards(){
-  DeckOfCards().shuffle();
-  return shuffledDeckOfCards();
+  theDeck.shuffle();
+  return theDeck;
 }
 
 void InitialDeal(List<int> playerHand, List<int> dealerHand, Cards){
